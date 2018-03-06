@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - "$PWD/docker/.data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Uw*tm8?
+      MYSQL_USER: webdbuser
+      MYSQL_PASSWORD: Abc123
+      MYSQL_DATABASE: webdb
+  web:
+    build: 
+      context: .
+    restart: always
